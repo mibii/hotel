@@ -4,6 +4,15 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-image {
+    min-width: 100%;
+}
+
 .tm-header{
     background: #211f17;
     display: block;

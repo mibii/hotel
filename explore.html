@@ -1,130 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Magestic Hotel</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
- <script type="text/javascript" src="dist/demo.js"></script>
-    
-    
-    </head>
-    
-<body>
-    <header class="tm-header">
-        <img class="tm-logo" src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel">
-        <nav class="tm-nav">
-       <div>
-            <ul>
-                <li class="tm-list"><a href="index.html">Home</a></li>
-                <li class="tm-list"><a href="explore.html">Explore</a></li>
-                <li class="tm-list"><a href="rooms.html">Rooms</a></li>
-                <li class="tm-list"><a href="bb.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Majestic Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <img src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel" class="w-40 h-auto mb-4 md:mb-0">
+                <nav>
+                    <ul class="flex flex-wrap justify-center space-x-6">
+                        <li><a href="index.html" class="hover:text-pink-500 transition duration-300">Home</a></li>
+                        <li><a href="explore.html" class="hover:text-pink-500 transition duration-300">Explore</a></li>
+                        <li><a href="rooms.html" class="hover:text-pink-500 transition duration-300">Rooms</a></li>
+                        <li><a href="bb.html" class="hover:text-pink-500 transition duration-300">Booking</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
-    
-    
-    <section class="tm-main">
-           <p>Explore</p>
-    </section>
-    
-    
-    <section class="tm-expsection">
-        
-        <div class="tm-exp1">
-            
-        <p> Luxorious and Spacious Rooms</p>  
-     <img src="images/luxorius.png">
- 
-  </div>  
-    </section>
-    
-    
-       <section class="tm-expsection">
-        
-        <div class="tm-exp2">
-            
-        <p> Inhouse Spa</p>  
-     <img src="images/spahouse.png" >
- 
-  </div>  
-    </section>
-    
-    
-     <section class="tm-expsection">
-        
-        <div class="tm-exp1">
-            
-        <p> Swimming Pools</p>  
-     <img src="images/swimming.png">
- 
-  </div>  
-    </section>
-    
-    
-       <section class="tm-expsection">
-        
-        <div class="tm-exp2">
-            
-        <p> Indoor  Game Room</p>  
-     <img src="images/play.png" >
- 
-  </div>  
-    </section>
-    
-    
-    
-    
-    
-    
 
-    
+    <main>
 
-    <section class="tm-makeres">
-    <div class="tm-res">
-       <div class="tm-resbutton">
-           <a href="bb.html"> <p>Make Reservation</p></a>
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center mb-16">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Luxurious and Spacious Rooms</h2>
+                        <p class="text-gray-700">Experience ultimate comfort in our meticulously designed rooms, offering ample space and luxurious amenities for a truly relaxing stay.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/luxorius.png" alt="Luxurious Rooms" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+                    <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Inhouse Spa</h2>
+                        <p class="text-gray-700">Indulge in relaxation at our state-of-the-art spa, offering a wide range of treatments to rejuvenate your body and mind.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/spahouse.png" alt="Inhouse Spa" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center mb-16">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Swimming Pools</h2>
+                        <p class="text-gray-700">Take a refreshing dip in our pristine swimming pools, perfect for both relaxation and exercise during your stay.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/swimming.png" alt="Swimming Pools" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse items-center">
+                    <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Indoor Game Room</h2>
+                        <p class="text-gray-700">Enjoy hours of entertainment in our well-equipped game room, featuring a variety of activities for guests of all ages.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/play.png" alt="Indoor Game Room" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-pink-600 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <a href="bb.html" class="inline-block bg-white text-pink-600 px-8 py-3 text-xl font-bold rounded-lg hover:bg-gray-200 transition duration-300">Make Reservation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Us</h3>
+                    <p class="text-gray-400">We are a part of chain of luxury hotels which extends all over the world. We provide a luxurious stay with various value added and free services which will make you visit us over and over again.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Address</h3>
+                    <p class="text-gray-400">415, Park Avenue, Hawai<br>
+                    Phone: (211) 9275693451<br>
+                    Email: majestic@info.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <img src="images/fb.png" alt="Facebook" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <img src="images/G.png" alt="Google" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <img src="images/twittr.png" alt="Twitter" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <img src="images/insta.png" alt="Instagram" class="w-6 h-6">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </section>
-    
-    
-    
-    <footer class="tm-footer">
-        <div class="tm-us">
-        <p class="bold">About Us</p>
-        <p>We are a part of chain of luxury hotels 
-            which extends all over the world. We 
-            provide a luxorious stay with various value
-            added and free services which will make
-            you visit us over and over again.</p>    
-        </div>
-       
-        <div class="tm-address">
-        <p class="bold">Address</p>
-        <p>415, Park Avenu, Hawai
-            Phone : (211) 9275693451
-            Email : majestic@info.com</p>    
-        </div>
-        <br/>
-    <div class="tm-media">
-        <a href="#"> <img src="images/fb.png"></a>
-        <a href="#"> <img src="images/G.png"> </a>
-        <a href="#"> <img src="images/twittr.png"> </a>
-        <a href="#">  <img src="images/insta.png"> </a>
-        
-        </div>
-<!--        <a href="#">  <img class="tm-up" src="images/up.png"> </a>-->
     </footer>
-    
 
-    
-    </body>
-    
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-pink-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-pink-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <script>
+        // Get the button
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
 </html>

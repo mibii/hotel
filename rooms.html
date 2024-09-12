@@ -1,152 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title> Magestic Hotel</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Majestic Hotel</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
- <script type="text/javascript" src="dist/demo.js"></script>
-    
-    </head>
-    
-<body>
-    <header class="tm-header">
-        <img class="tm-logo" src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel">
-        <nav class="tm-nav">
-       <div>
-            <ul>
-                <li class="tm-list"><a href="index.html">Home</a></li>
-                <li class="tm-list"><a href="explore.html">Explore</a></li>
-                <li class="tm-list"><a href="rooms.html">Rooms</a></li>
-                <li class="tm-list"><a href="bb.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+</head>
+
+<body class="font-sans bg-gray-100">
+    <header class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <img src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel" class="w-40 h-auto mb-4 md:mb-0">
+                <nav>
+                    <ul class="flex flex-wrap justify-center space-x-6">
+                        <li><a href="index.html" class="hover:text-pink-500 transition duration-300">Home</a></li>
+                        <li><a href="explore.html" class="hover:text-pink-500 transition duration-300">Explore</a></li>
+                        <li><a href="rooms.html" class="hover:text-pink-500 transition duration-300">Rooms</a></li>
+                        <li><a href="bb.html" class="hover:text-pink-500 transition duration-300">Booking</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
-    
-    
-    <section class="tm-main">
-           <p>Rooms</p>
+ 
+
+    <section class="container mx-auto p-5">
+        <h1 class="text-3xl font-bold text-center my-10">Rooms</h1>
     </section>
-    
-    
-      <section class="tm-roomsection">
-                    <div class="tm-room1">
-                        <div class="tm-trans"> <div><p>2 Bed</p><p>Complimentary liquor</p><p>Free Wifi</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 1999.99</p> </div></div>
-                        
-                        
-                        <img class="tm-roomimage" src="images/luxury.png">
-                     <p class="s">Luxury Suite</p>
 
-                    </div>
-                        <div class="tm-room1">
-                            <div class="tm-trans"> <div><p>2 Bed</p><p>Luxorious interior</p><p>Free Wifi</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 1599.99</p> </div></div>
-                    
-                            
-                        <img class="tm-roomimage" src="images/delux.png">
-                            <p>Delux Suite</p>
-
-                    </div>
-                        <div class="tm-room1">
-                            
-                            <div class="tm-trans"> <div><p>2 Bed</p><p>Scenic View</p><p>Free Wifi</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 1299.99</p> </div></div>
-                        
-                            
-                        <img class="tm-roomimage" src="images/premier.png">
-                             <p>Premier Suite</p>
-
-                    </div>
-    </section>
-    <br/>
-     <section class="tm-roomsection">
-                    <div class="tm-room1">
-                        
-                        <div class="tm-trans"> <div><p>2 Bed</p><p>Free wifi</p><p>Fresh towels</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 999.99</p> </div></div>
-                        
-                        
-                        <img class="tm-roomimage" src="images/luxuryroom.png">
-                     <p class="s">Luxury Room</p>
-
-                    </div>
-                        <div class="tm-room1">
-                            
-                            <div class="tm-trans"> <div><p>2 Bed</p><p>Fresh towels</p><p>Less costly</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 599.99</p> </div></div>
-                        
-                            
-                        <img class="tm-roomimage" src="images/deluxroom.png">
-                            <p>Delux Room</p>
-
-                    </div>
-                        <div class="tm-room1">
-                            
-                            <div class="tm-trans"> <div><p>1 Bed</p><p>Fresh towels</p><p>Less costly</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">$ 399.99</p> </div></div>
-                        
-                            
-                        <img class="tm-roomimage" src="images/premiumroom.png">
-                             <p>Premier Room</p>
-
-                    </div>
-    </section>
-       <br/>
-    
-    
-    
-     <section class="tm-makeres">
-    <div class="tm-res">
-       <div class="tm-resbutton">
-           <a href="bb.html"> <p>Make Reservation</p></a>
+    <section class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/luxury.png" alt="Luxury Suite">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Luxury Suite</h2>
+                <div class="mt-3">
+                    <p>2 Bed</p>
+                    <p>Complimentary liquor</p>
+                    <p>Free Wifi</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$1999.99</span>
+                </div>
+            </div>
         </div>
+
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/delux.png" alt="Delux Suite">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Delux Suite</h2>
+                <div class="mt-3">
+                    <p>2 Bed</p>
+                    <p>Luxurious interior</p>
+                    <p>Free Wifi</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$1599.99</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/premier.png" alt="Premier Suite">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Premier Suite</h2>
+                <div class="mt-3">
+                    <p>2 Bed</p>
+                    <p>Scenic View</p>
+                    <p>Free Wifi</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$1299.99</span>
+                </div>
+            </div>
         </div>
     </section>
-    
-    
-    
-    <footer class="tm-footer">
-        <div class="tm-us">
-        <p class="bold">About Us</p>
-        <p>We are a part of chain of luxury hotels 
-            which extends all over the world. We 
-            provide a luxorious stay with various value
-            added and free services which will make
-            you visit us over and over again.</p>    
+
+    <section class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/luxuryroom.png" alt="Luxury Room">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Luxury Room</h2>
+                <div class="mt-3">
+                    <p>2 Bed</p>
+                    <p>Free wifi</p>
+                    <p>Fresh towels</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$999.99</span>
+                </div>
+            </div>
         </div>
-       
-        <div class="tm-address">
-        <p class="bold">Address</p>
-        <p>415, Park Avenu, Hawai
-            Phone : (211) 9275693451
-            Email : majestic@info.com</p>    
+
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/deluxroom.png" alt="Delux Room">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Delux Room</h2>
+                <div class="mt-3">
+                    <p>2 Bed</p>
+                    <p>Fresh towels</p>
+                    <p>Less costly</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$599.99</span>
+                </div>
+            </div>
         </div>
-        <br/>
-    <div class="tm-media">
-        <a href="#"> <img src="images/fb.png"></a>
-        <a href="#"> <img src="images/G.png"> </a>
-        <a href="#"> <img src="images/twittr.png"> </a>
-        <a href="#">  <img src="images/insta.png"> </a>
-        
+
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="images/premiumroom.png" alt="Premier Room">
+            <div class="p-5">
+                <h2 class="text-xl font-semibold">Premier Room</h2>
+                <div class="mt-3">
+                    <p>1 Bed</p>
+                    <p>Fresh towels</p>
+                    <p>Less costly</p>
+                </div>
+                <div class="mt-4">
+                    <span class="text-lg font-bold">Only for</span>
+                    <span class="text-2xl font-bold text-blue-600">$399.99</span>
+                </div>
+            </div>
         </div>
-<!--        <a href="#">  <img class="tm-up" src="images/up.png"> </a>-->
+    </section>
+
+    <section class="container mx-auto p-5 text-center">
+        <div class="bg-blue-600 text-white rounded-lg p-4">
+            <a href="bb.html" class="text-lg font-bold">Make Reservation</a>
+        </div>
+    </section>
+
+    <footer class="bg-white shadow mt-10">
+        <div class="container mx-auto p-5 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+                <p class="font-bold">About Us</p>
+                <p>We are a part of a chain of luxury hotels that extends all over the world. We provide a luxurious stay with various value-added and free services which will make you visit us over and over again.</p>
+            </div>
+            <div>
+                <p class="font-bold">Address</p>
+                <p>415, Park Avenue, Hawai<br>Phone: (211) 9275693451<br>Email: majestic@info.com</p>
+            </div>
+        </div>
+        <div class="container mx-auto p-5 text-center">
+            <a href="#" class="inline-block mx-2">
+                <img src="images/fb.png" alt="Facebook" class="w-6 inline">
+            </a>
+            <a href="#" class="inline-block mx-2">
+                <img src="images/G.png" alt="Google" class="w-6 inline">
+            </a>
+            <a href="#" class="inline-block mx-2">
+                <img src="images/twittr.png" alt="Twitter" class="w-6 inline">
+            </a>
+            <a href="#" class="inline-block mx-2">
+                <img src="images/insta.png" alt="Instagram" class="w-6 inline">
+            </a>
+        </div>
     </footer>
-    
 
-    
-    </body>
-    
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-pink-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-pink-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <script>
+        // Get the button
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+
 </html>
-    

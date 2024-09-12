@@ -1,297 +1,284 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Magestic Hotel</title>
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script type="text/javascript" src="dist/slick.js"></script>
-     <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
-  
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    
-<!--    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">-->
+    <style>
+     .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-  
-         <script type="text/javascript" src="dist/demo.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    
-    
+.slider-image {
+    min-width: 100%;
+}
+      </style>
 
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <img src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel" class="w-40 h-auto">
+                
+                <!-- Burger menu button (visible on small screens) -->
+                <button id="burger-menu" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
 
-    
-    </head>
-    
-<body >  
-    <header class="tm-header">
-        <img class="tm-logo" src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel">
-        <nav class="tm-nav" >
-       <div>
-            <ul>
-                <li class="tm-list"><a href="index.html">Home</a></li>
-                <li class="tm-list"><a href="explore.html">Explore </a></li>
-                <li class="tm-list"><a href="rooms.html">Rooms</a></li>
-                <li class="tm-list"><a href="bb.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>    
+                <!-- Navigation menu -->
+                <nav id="nav-menu" class="hidden md:block">
+                    <ul class="flex flex-col md:flex-row md:space-x-6">
+                        <li><a href="index.html" class="block py-2 hover:text-pink-500 transition duration-300">Home</a></li>
+                        <li><a href="explore.html" class="block py-2 hover:text-pink-500 transition duration-300">Explore</a></li>
+                        <li><a href="rooms.html" class="block py-2 hover:text-pink-500 transition duration-300">Rooms</a></li>
+                        <li><a href="bb.html" class="block py-2 hover:text-pink-500 transition duration-300">Booking</a></li>
+                        <li><a href="contact.html" class="block py-2 hover:text-pink-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
-    
-    <section class="tm-imgslider">
- 
-    
-    <div class="slider single">
-					<div><div class="tm-slider"><img class="tm-sliderimage" src="images/main_slider11.png" alt="Majestic Hotel"> 
-                        <div class="tm-slidertext">
-                        <p class="bold"> Expierence</p>
-                        <p class="simple">The Beauty and ambience </p>
-                            <p class="simple">All in one place </p></div>
-                </div></div>
-					<div><div class="tm-slider"><img class="tm-sliderimage" src="images/main_slider12.png" alt="Majestic Hotel"> 
-                        <div class="tm-slidertext">
-                        <p class="bold"> Expierence</p>
-                        <p class="simple">The tranquility </p>
-                            <p class="simple">in hotel spa and swimming pool </p></div>
-                </div></div>
-					<div><div class="tm-slider"><img class="tm-sliderimage" src="images/main_slider13.png" alt="Majestic Hotel"> 
-                        <div class="tm-slidertext">
-                        <p class="bold"> Expierence</p>
-                        <p class="simple">The luxorious interiors </p>
-                            <p class="simple">in every hotel room </p></div>
-                </div></div>
-					<div><div class="tm-slider"><img class="tm-sliderimage" src="images/main_slider14.png" alt="Majestic Hotel"> 
-                        <div class="tm-slidertext">
-                        <p class="bold"> Expirence</p>
-                        <p class="simple">The mesmerizing beach view </p>
-                            <p class="simple">from your room's balcony</p></div>
-                </div></div>
-				
-				</div>
-        <img src="images/back.png" class="left">
-          <img src="images/next.png" class="right">
-   </section>
-    
+    <script>
+        // Burger menu functionality
+        const burgerMenu = document.getElementById('burger-menu');
+        const navMenu = document.getElementById('nav-menu');
 
-    
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
 
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
 
-    
-     <section class="slider room flex">
-      
-                    <div class="tm-rooms">
-                        <img  src="images/luxury.png">
-                       <a href="rooms.html"> <p class="s">Luxury Suite</p> </a>
+        // Ensure menu is visible on larger screens
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint
+                navMenu.classList.remove('hidden');
+            } else {
+                navMenu.classList.add('hidden');
+            }
+        });
 
-                    </div>
-                        <div class="tm-rooms">
-                        <img  src="images/delux.png">
-                            <a href="rooms.html"> <p class="s">Delux Suite</p></a>
+        // Scroll to top functionality (from previous implementation)
+        var scrollToTopBtn = document.getElementById("scrollToTop");
 
-                    </div>
-                        <div class="tm-rooms">
-                        <img  src="images/premier.png">
-                            <a href="rooms.html">  <p>Premier Suite</p></a>
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
 
-                    </div>
-                    <div class="tm-rooms">
-                        <img  src="images/luxuryroom.png">
-                       <a href="rooms.html"> <p class="s">Luxury Room</p> </a>
-
-                    </div>
-                        <div class="tm-rooms">
-                        <img  src="images/deluxroom.png">
-                            <a href="rooms.html"> <p>Delux Room</p></a>
-
-                    </div>
-                        <div class="tm-rooms">
-                        <img  src="images/premiumroom.png">
-                            <a href="rooms.html">  <p>Premier Room</p></a>
-
-                    </div>
-            
-                  
-    </section>
-
-    
-    
-    
-    
-    <section class="tm-servicesection">
-         <div class="tm-service">
-              <img class="tm-serimage" src="images/bell.png">
-             <div>
-                        <p class="b">Room Service</p>
-                        <p> Enjoy your stay with excellent and timely room service </p> </div>
-        </div>
-        <div class="tm-service">
-              <img class="tm-serimage" src="images/coffee.png">
-             <div>
-                        <p class="b">Free Breakfast</p>
-                        <p> Enjoy Free breakfast every morning</p> </div>
-        </div>
-    </section>
-    <section class="tm-servicesection">
-
-        <div class="tm-service">
-              <img class="tm-serimage" src="images/car-front.png">
-             <div>
-                        <p class="b">Free Parking</p>
-                        <p> No need to pay any extra charges to park your vehicle </p> </div>
-        </div>
-        <div class="tm-service">
-              <img class="tm-serimage" src="images/spa.png">
-             <div>
-                        <p class="b">Free Spa</p>
-                        <p> Relax at the inhouse Spa once every day of your stay </p> </div>
-        </div>
-
-    </section>
-    
-    
-    
-    
-    
-    <section class="tm-reviewsection">
-         
-        <div class="tm-review ">
-            <div class="slider review">
-            <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Great hotel, I am recommending it to everyone. Wished i had stayed few more days there.</p>  <br/>
-        <p> Rachel Green &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tripster</p> </div>
- 
-                </div>
-            
-            <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Nice hotel, I had a wonderful expeirence and there are plenty of amenities. </p>  <br/>
-        <p> Ross Geller &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Visitor</p> </div>
- 
-                </div>
-            
-           
-            <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Great hotel, Great food enough said. </p>  <br/>
-        <p> Joey Tribiani &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Actor</p> </div>
- 
-                </div>    
-                
-                
-            <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Very nice hotel enjoyed the spa and as a masseuse I recommend it. </p>  <br/>
-        <p> Pheobe Buffay &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Traveller</p> </div>
- 
-                </div>   
-                
-                <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Nice, calm and clean just the way I like it. </p>  <br/>
-        <p> Monica Geller &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tripster</p> </div>
- 
-                </div>    
-                
-                       <div class="tm-revcon">
-        <p class="b"> Reviews</p>
-            <div class="tm-stars">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-                 <img src="images/star.png">
-            </div>
-                <div class="tm-rev">
-        <p> Knock knock whose there ? ... a satisfied customer. </p>  <br/>
-        <p> Chandler Bing &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Visitor</p> </div>
- 
-                </div>  
-                
-            </div>
-            
-
-        </div>
-    </section>
-    
-    
-    <section class="tm-makeres">
-    <div class="tm-res">
-       <div class="tm-resbutton">
-           <a href="bb.html"> <p>Make Reservation</p></a>
-        </div>
-        </div>
-    </section>
-    
-    <footer class="tm-footer">
-        <div class="tm-us">
-        <p class="bold">About Us</p>
-        <p>We are a part of chain of luxury hotels 
-            which extends all over the world. We 
-            provide a luxorious stay with various value
-            added and free services which will make
-            you visit us over and over again.</p>    
-        </div>
-       
-        <div class="tm-address">
-        <p class="bold">Address</p>
-        <p>415, Park Avenu, Hawai
-            Phone : (211) 9275693451
-            Email : majestic@info.com</p>    
-        </div>
-        <br/>
-    <div class="tm-media">
-        <a href="#"> <img src="images/fb.png"></a>
-        <a href="#"> <img src="images/G.png"> </a>
-        <a href="#"> <img src="images/twittr.png"> </a>
-        <a href="#">  <img src="images/insta.png"> </a>
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentIndex = 0;
+            const slider = document.querySelector('.slider');
+            const images = document.querySelectorAll('.slider-image');
         
-        </div>
-       
-<!--    <a  href="#top">  <img class="tm-up" src="images/up.png"> </a>-->
+            function showSlide(index) {
+                if (slider) {
+                    currentIndex = index;
+                    const translateX = -currentIndex * 100 + '%';
+                    slider.style.transform = 'translateX(' + translateX + ')';
+                }
+            }
         
-      
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showSlide(currentIndex);
+            }
+        
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showSlide(currentIndex);
+            }
+        
+            // Automatically change slides every 3 seconds
+            setInterval(nextSlide, 3000);
+        
+            // Initialize the slider
+            showSlide(currentIndex);
+    
+            // Add event listeners to the buttons
+            const prevButton = document.querySelector('button[onclick="prevSlide()"]');
+            const nextButton = document.querySelector('button[onclick="nextSlide()"]');
+    
+            if (prevButton) {
+                prevButton.onclick = prevSlide;
+            }
+    
+            if (nextButton) {
+                nextButton.onclick = nextSlide;
+            }
+        });
+        </script>
+
+    <main>
+<!-- Image Slider Section -->
+<section class="relative">
+    <div class="relative w-full h-auto overflow-hidden">
+        <div class="slider">
+            <img src="images/main_slider11.jpg" alt="Majestic Hotel 1" class="slider-image">
+            <img src="images/main_slider12.jpg" alt="Majestic Hotel 2" class="slider-image">
+            <img src="images/main_slider13.jpg" alt="Majestic Hotel 3" class="slider-image">
+        </div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+            <h2 class="text-4xl font-bold mb-2">Experience</h2>
+            <p class="text-2xl">The Beauty and ambience</p>
+            <p class="text-2xl">All in one place</p>
+        </div>
+        <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full" onclick="prevSlide()">❮</button>
+        <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full" onclick="nextSlide()">❯</button>
+    </div>
+</section>
+
+        <!-- Room Types Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 text-white rounded-lg overflow-hidden">
+                        <img src="images/luxury.png" alt="Luxury Suite" class="w-full h-48 object-cover">
+                        <a href="rooms.html" class="block p-4 text-center text-xl hover:text-pink-500 transition duration-300">Luxury Suite</a>
+                    </div>
+                    <div class="bg-gray-800 text-white rounded-lg overflow-hidden">
+                        <img src="images/delux.png" alt="Delux Suite" class="w-full h-48 object-cover">
+                        <a href="rooms.html" class="block p-4 text-center text-xl hover:text-pink-500 transition duration-300">Delux Suite</a>
+                    </div>
+                    <div class="bg-gray-800 text-white rounded-lg overflow-hidden">
+                        <img src="images/premier.png" alt="Premier Suite" class="w-full h-48 object-cover">
+                        <a href="rooms.html" class="block p-4 text-center text-xl hover:text-pink-500 transition duration-300">Premier Suite</a>
+                    </div>
+                    <!-- Add the other room types here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-12 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-center space-x-4">
+                        <img src="images/bell.png" alt="Room Service" class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Room Service</h3>
+                            <p>Enjoy your stay with excellent and timely room service</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="images/coffee.png" alt="Free Breakfast" class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Free Breakfast</h3>
+                            <p>Enjoy Free breakfast every morning</p>
+                        </div>
+                    </div>
+                    <!-- Add the other services here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="py-12 bg-gray-800 text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Reviews</h2>
+                <!-- We'll need to implement a JavaScript slider for reviews. For now, let's show one review. -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="flex justify-center mb-4">
+                        <img src="images/star.png" alt="Star" class="w-6 h-6">
+                        <img src="images/star.png" alt="Star" class="w-6 h-6">
+                        <img src="images/star.png" alt="Star" class="w-6 h-6">
+                        <img src="images/star.png" alt="Star" class="w-6 h-6">
+                        <img src="images/star.png" alt="Star" class="w-6 h-6">
+                    </div>
+                    <p class="text-center mb-4">"Great hotel, I am recommending it to everyone. Wished i had stayed few more days there."</p>
+                    <p class="text-center text-gray-400">Rachel Green - Tripster</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="py-12 bg-pink-600 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <a href="bb.html" class="inline-block border-2 border-white px-8 py-3 text-xl font-bold hover:bg-white hover:text-pink-600 transition duration-300">Make Reservation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Us</h3>
+                    <p>We are a part of chain of luxury hotels which extends all over the world. We provide a luxurious stay with various value added and free services which will make you visit us over and over again.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Address</h3>
+                    <p>415, Park Avenue, Hawai</p>
+                    <p>Phone: (211) 9275693451</p>
+                    <p>Email: majestic@info.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-pink-500 transition duration-300"><img src="images/fb.png" alt="Facebook" class="w-6 h-6"></a>
+                        <a href="#" class="hover:text-pink-500 transition duration-300"><img src="images/G.png" alt="Google" class="w-6 h-6"></a>
+                        <a href="#" class="hover:text-pink-500 transition duration-300"><img src="images/twittr.png" alt="Twitter" class="w-6 h-6"></a>
+                        <a href="#" class="hover:text-pink-500 transition duration-300"><img src="images/insta.png" alt="Instagram" class="w-6 h-6"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-pink-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-pink-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <script>
+        // Get the button
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 </body>
 </html>
