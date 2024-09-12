@@ -14,20 +14,120 @@
 <body class="font-sans bg-gray-100">
     <header class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <img src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel" class="w-40 h-auto mb-4 md:mb-0">
-                <nav>
-                    <ul class="flex flex-wrap justify-center space-x-6">
-                        <li><a href="index.html" class="hover:text-pink-500 transition duration-300">Home</a></li>
-                        <li><a href="explore.html" class="hover:text-pink-500 transition duration-300">Explore</a></li>
-                        <li><a href="rooms.html" class="hover:text-pink-500 transition duration-300">Rooms</a></li>
-                        <li><a href="bb.html" class="hover:text-pink-500 transition duration-300">Booking</a></li>
-                        <li><a href="contact.html" class="hover:text-pink-500 transition duration-300">Contact</a></li>
+            <div class="flex justify-between items-center">
+                <img src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel" class="w-40 h-auto">
+                
+                <!-- Burger menu button (visible on small screens) -->
+                <button id="burger-menu" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Navigation menu -->
+                <nav id="nav-menu" class="hidden md:block">
+                    <ul class="flex flex-col md:flex-row md:space-x-6">
+                        <li><a href="index.html" class="block py-2 hover:text-pink-500 transition duration-300">Home</a></li>
+                        <li><a href="explore.html" class="block py-2 hover:text-pink-500 transition duration-300">Explore</a></li>
+                        <li><a href="rooms.html" class="block py-2 hover:text-pink-500 transition duration-300">Rooms</a></li>
+                        <li><a href="bb.html" class="block py-2 hover:text-pink-500 transition duration-300">Booking</a></li>
+                        <li><a href="contact.html" class="block py-2 hover:text-pink-500 transition duration-300">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    <script>
+        // Burger menu functionality
+        const burgerMenu = document.getElementById('burger-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Ensure menu is visible on larger screens
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint
+                navMenu.classList.remove('hidden');
+            } else {
+                navMenu.classList.add('hidden');
+            }
+        });
+
+        // Scroll to top functionality (from previous implementation)
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
+
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentIndex = 0;
+            const slider = document.querySelector('.slider');
+            const images = document.querySelectorAll('.slider-image');
+        
+            function showSlide(index) {
+                if (slider) {
+                    currentIndex = index;
+                    const translateX = -currentIndex * 100 + '%';
+                    slider.style.transform = 'translateX(' + translateX + ')';
+                }
+            }
+        
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showSlide(currentIndex);
+            }
+        
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showSlide(currentIndex);
+            }
+        
+            // Automatically change slides every 3 seconds
+            setInterval(nextSlide, 3000);
+        
+            // Initialize the slider
+            showSlide(currentIndex);
+    
+            // Add event listeners to the buttons
+            const prevButton = document.querySelector('button[onclick="prevSlide()"]');
+            const nextButton = document.querySelector('button[onclick="nextSlide()"]');
+    
+            if (prevButton) {
+                prevButton.onclick = prevSlide;
+            }
+    
+            if (nextButton) {
+                nextButton.onclick = nextSlide;
+            }
+        });
+        </script>
  
 
     <section class="container mx-auto p-5">
