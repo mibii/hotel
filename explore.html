@@ -80,49 +80,6 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let currentIndex = 0;
-            const slider = document.querySelector('.slider');
-            const images = document.querySelectorAll('.slider-image');
-        
-            function showSlide(index) {
-                if (slider) {
-                    currentIndex = index;
-                    const translateX = -currentIndex * 100 + '%';
-                    slider.style.transform = 'translateX(' + translateX + ')';
-                }
-            }
-        
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % images.length;
-                showSlide(currentIndex);
-            }
-        
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showSlide(currentIndex);
-            }
-        
-            // Automatically change slides every 3 seconds
-            setInterval(nextSlide, 3000);
-        
-            // Initialize the slider
-            showSlide(currentIndex);
-    
-            // Add event listeners to the buttons
-            const prevButton = document.querySelector('button[onclick="prevSlide()"]');
-            const nextButton = document.querySelector('button[onclick="nextSlide()"]');
-    
-            if (prevButton) {
-                prevButton.onclick = prevSlide;
-            }
-    
-            if (nextButton) {
-                nextButton.onclick = nextSlide;
-            }
-        });
-        </script>
 
     <main>
 

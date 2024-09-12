@@ -83,49 +83,6 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let currentIndex = 0;
-            const slider = document.querySelector('.slider');
-            const images = document.querySelectorAll('.slider-image');
-        
-            function showSlide(index) {
-                if (slider) {
-                    currentIndex = index;
-                    const translateX = -currentIndex * 100 + '%';
-                    slider.style.transform = 'translateX(' + translateX + ')';
-                }
-            }
-        
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % images.length;
-                showSlide(currentIndex);
-            }
-        
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showSlide(currentIndex);
-            }
-        
-            // Automatically change slides every 3 seconds
-            setInterval(nextSlide, 3000);
-        
-            // Initialize the slider
-            showSlide(currentIndex);
-    
-            // Add event listeners to the buttons
-            const prevButton = document.querySelector('button[onclick="prevSlide()"]');
-            const nextButton = document.querySelector('button[onclick="nextSlide()"]');
-    
-            if (prevButton) {
-                prevButton.onclick = prevSlide;
-            }
-    
-            if (nextButton) {
-                nextButton.onclick = nextSlide;
-            }
-        });
-        </script>
 
     <section class="bg-gray-100 py-8">
         <div class="container mx-auto text-center">
@@ -178,5 +135,28 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Get the button
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.remove("opacity-0");
+                scrollToTopBtn.classList.add("opacity-100");
+            } else {
+                scrollToTopBtn.classList.remove("opacity-100");
+                scrollToTopBtn.classList.add("opacity-0");
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 </body>
 </html>
