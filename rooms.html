@@ -38,32 +38,36 @@
         </div>
     </header>
     <script>
-        // Burger menu functionality
-        const burgerMenu = document.getElementById('burger-menu');
-        const navMenu = document.getElementById('nav-menu');
+                    // Burger menu functionality
+                const burgerMenu = document.getElementById('burger-menu');
+                const navMenu = document.getElementById('nav-menu');
 
-        burgerMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-        });
+                burgerMenu.addEventListener('click', () => {
+                    navMenu.classList.toggle('hidden');
+                });
 
-        // Close menu when a link is clicked
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) { // md breakpoint
-                    navMenu.classList.add('hidden');
+                // Close menu when a link is clicked
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 768) { // md breakpoint
+                            navMenu.classList.add('hidden');
+                        }
+                    });
+                });
+
+                // Ensure menu is visible on larger screens and hidden on smaller screens
+                function adjustMenuVisibility() {
+                    if (window.innerWidth >= 768) { // md breakpoint
+                        navMenu.classList.remove('hidden');
+                    } else {
+                        navMenu.classList.add('hidden');
+                    }
                 }
-            });
-        });
 
-        // Ensure menu is visible on larger screens
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) { // md breakpoint
-                navMenu.classList.remove('hidden');
-            } else {
-                navMenu.classList.add('hidden');
-            }
-        });
+// Call the function on page load and whenever the window is resized
+window.addEventListener('load', adjustMenuVisibility);
+window.addEventListener('resize', adjustMenuVisibility);
 
         // Scroll to top functionality (from previous implementation)
         var scrollToTopBtn = document.getElementById("scrollToTop");
