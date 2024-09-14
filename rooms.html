@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majestic Hotel</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
-    <script type="text/javascript" src="dist/demo.js"></script>
+    <!-- Remove jQuery and unnecessary script imports -->
+    <style>
+        /* Force the menu to be hidden on small screens by default */
+        @media (max-width: 767px) {
+            #nav-menu {
+                display: none !important;
+            }
+            #nav-menu.show {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
-
 <body class="font-sans bg-gray-100">
     <header class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-6">
@@ -37,38 +45,45 @@
             </div>
         </div>
     </header>
+    
+
     <script>
-                    // Burger menu functionality
-                const burgerMenu = document.getElementById('burger-menu');
-                const navMenu = document.getElementById('nav-menu');
+        // Burger menu functionality
+        const burgerMenu = document.getElementById('burger-menu');
+        const navMenu = document.getElementById('nav-menu');
 
-                burgerMenu.addEventListener('click', () => {
-                    navMenu.classList.toggle('hidden');
-                });
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
 
-                // Close menu when a link is clicked
-                const navLinks = navMenu.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (window.innerWidth < 768) { // md breakpoint
-                            navMenu.classList.add('hidden');
-                        }
-                    });
-                });
-
-                // Ensure menu is visible on larger screens and hidden on smaller screens
-                function adjustMenuVisibility() {
-                    if (window.innerWidth >= 768) { // md breakpoint
-                        navMenu.classList.remove('hidden');
-                    } else {
-                        navMenu.classList.add('hidden');
-                    }
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    navMenu.classList.remove('show');
                 }
+            });
+        });
 
-// Call the function on page load and whenever the window is resized
-window.addEventListener('load', adjustMenuVisibility);
-window.addEventListener('resize', adjustMenuVisibility);
+        // Ensure menu visibility is correct on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint
+                navMenu.classList.remove('hidden');
+                navMenu.classList.remove('show');
+            } else {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('show');
+            }
+        });
 
+        // Initial check on page load
+        if (window.innerWidth < 768) {
+            navMenu.classList.add('hidden');
+        }
+    </script>
+    
+    <script>
         // Scroll to top functionality (from previous implementation)
         var scrollToTopBtn = document.getElementById("scrollToTop");
 
